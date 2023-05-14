@@ -7,9 +7,9 @@ First REST API made with django framework
 # Pasos para crear el proyecto 
 
 1. Crear un entorno virtual y activarlo<br>
-    ` python -m venv .venv `
+    ` python -m venv .venv `<br>
     **Activacion en Linux**<br>
-    ` source .venv/bin/activate `
+    ` source .venv/bin/activate `<br>
     **Activacion en Windows**<br>
     ` .\.venv\Scripts\activate `
 2. Instalar la dependencia django
