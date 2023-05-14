@@ -1,0 +1,6 @@
+# carpetas
+.venv/
+*/__pycache__/
+*/*/__pycache__/
+# archivos
+db.sqlite3
