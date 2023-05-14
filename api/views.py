@@ -10,7 +10,12 @@ import json
 def peliculas(request):
     if request.method == 'GET':
         peliculas = models.Pelicula.objects.all()
-        print(peliculas)
+        
+        #ordenar por query params
+        ordenar_por = request.GET.get('ordenarPor', '')
+        if ordenar_por:
+            peliculas = peliculas.order_by(ordenar_por)
+
         respuesta =[]
         for pelicula in peliculas:
             dict = {}
