@@ -10,12 +10,36 @@ from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status # Posibly enum class with most of the http response with description so it is easier to find
+from rest_framework.views import APIView
 # Create your views here.
+
+#
+#   Start using the ApiView class to provide functionality
+#
+
+class PeliculaApiView(APIView):
+    def get(self, request):
+        peliculas = models.Pelicula.objects.all()
+        
+        #ordenar por query params
+        ordenar_por = request.GET.get('ordenarPor', '')
+        if ordenar_por:
+            peliculas = peliculas.order_by(ordenar_por)
+
+        respuesta = serializer.PeliculaSerializer(peliculas, many=True)
+    def post(self, request):
+        serialized_data = serializer.PeliculaSerializer(data=request.data)
+        if serialized_data.is_valid():
+            serialized_data.save()
+            return Response(serialized_data.data, status=status.HTTP_201_CREATED)
+
+        return Response(serialized_data.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 #
 #   Starting the use of api_views decorator to simplify the code 
 #
-#   A decorator is a line of code that provides a function with certain methods, similar to extend a class
+#   A decorator is a line of code that provides a function with certain built in methods, similar to extend a class
 #   but in a simplier way
 #
 #   Here we implement the Response class, this is usefull specially for test and debug, because it provides different type
@@ -24,7 +48,7 @@ from rest_framework import status # Posibly enum class with most of the http res
 #
 
 @api_view(['GET', 'POST']) # in this case we need to specify the http method/s that we're going to use
-def peliculas(request): #hecho con django REST Framework
+def peliculas_api_view_decorator(request): #hecho con django REST Framework
     if request.method == 'GET':
         peliculas = models.Pelicula.objects.all()
         
@@ -46,7 +70,7 @@ def peliculas(request): #hecho con django REST Framework
     
 
 @api_view(['GET', 'PUT', 'DELETE']) 
-def pelicula(request, id):
+def pelicula_api_view_decorator(request, id):
     try:
         pelicula = models.Pelicula.objects.get(pk=id)
     except Exception:
