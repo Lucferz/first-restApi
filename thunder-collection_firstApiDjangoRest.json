@@ -1,0 +1,56 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "firstApiDjangoRest",
+    "dateExported": "2023-05-14T14:45:51.778Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "8dcde378-dfd8-4c9b-8943-d8bfc2d8bd1c",
+            "colId": "809b1d11-8a9b-4c3f-bb92-87dcbb67d9a0",
+            "containerId": "",
+            "name": "Listar Peliculas",
+            "url": "localhost:8000/peliculas",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-14T03:30:13.301Z",
+            "modified": "2023-05-14T03:30:32.841Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ded17824-1980-48dc-92d2-80c7fb087925",
+            "colId": "809b1d11-8a9b-4c3f-bb92-87dcbb67d9a0",
+            "containerId": "",
+            "name": "Obtener una Pelicula",
+            "url": "localhost:8000/peliculas/3",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-05-14T03:49:12.041Z",
+            "modified": "2023-05-14T03:50:01.365Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "46ff3bb7-4427-458e-9f5f-092fea161460",
+            "colId": "809b1d11-8a9b-4c3f-bb92-87dcbb67d9a0",
+            "containerId": "",
+            "name": "guardar una pelicula",
+            "url": "localhost:8000/peliculas",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-05-14T03:31:18.904Z",
+            "modified": "2023-05-14T03:37:41.401Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\" : \"Capitan America\",\n  \"estreno\" : \"2021-05-06\",\n  \"sinopsis\" : \"Un boludo con un escudo\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
