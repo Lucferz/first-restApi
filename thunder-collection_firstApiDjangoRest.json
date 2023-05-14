@@ -1,55 +1,94 @@
 {
     "client": "Thunder Client",
     "collectionName": "firstApiDjangoRest",
-    "dateExported": "2023-05-14T14:45:51.778Z",
+    "dateExported": "2023-05-14T15:45:35.340Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "8dcde378-dfd8-4c9b-8943-d8bfc2d8bd1c",
-            "colId": "809b1d11-8a9b-4c3f-bb92-87dcbb67d9a0",
+            "_id": "9718e0aa-a95d-4fe1-b566-bbb571c191de",
+            "colId": "bf489cce-5b96-43d3-b6e5-7c89ed661f0d",
             "containerId": "",
             "name": "Listar Peliculas",
-            "url": "localhost:8000/peliculas",
+            "url": "localhost:8000/peliculas?ordenarPor=estreno",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2023-05-14T03:30:13.301Z",
-            "modified": "2023-05-14T03:30:32.841Z",
+            "created": "2023-05-14T14:46:09.024Z",
+            "modified": "2023-05-14T15:20:26.119Z",
             "headers": [],
-            "params": [],
+            "params": [
+                {
+                    "name": "ordenarPor",
+                    "value": "estreno",
+                    "isPath": false
+                }
+            ],
             "tests": []
         },
         {
-            "_id": "ded17824-1980-48dc-92d2-80c7fb087925",
-            "colId": "809b1d11-8a9b-4c3f-bb92-87dcbb67d9a0",
+            "_id": "32a81330-35b6-4bc0-bc55-6f33c1137bad",
+            "colId": "bf489cce-5b96-43d3-b6e5-7c89ed661f0d",
             "containerId": "",
             "name": "Obtener una Pelicula",
             "url": "localhost:8000/peliculas/3",
             "method": "GET",
             "sortNum": 15000,
-            "created": "2023-05-14T03:49:12.041Z",
-            "modified": "2023-05-14T03:50:01.365Z",
+            "created": "2023-05-14T14:46:09.025Z",
+            "modified": "2023-05-14T14:46:09.025Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "46ff3bb7-4427-458e-9f5f-092fea161460",
-            "colId": "809b1d11-8a9b-4c3f-bb92-87dcbb67d9a0",
+            "_id": "204af653-08f7-4c27-92d3-87cb7a7d8a3f",
+            "colId": "bf489cce-5b96-43d3-b6e5-7c89ed661f0d",
             "containerId": "",
-            "name": "guardar una pelicula",
+            "name": "crear una pelicula",
             "url": "localhost:8000/peliculas",
             "method": "POST",
             "sortNum": 20000,
-            "created": "2023-05-14T03:31:18.904Z",
-            "modified": "2023-05-14T03:37:41.401Z",
+            "created": "2023-05-14T14:46:09.026Z",
+            "modified": "2023-05-14T15:24:16.454Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"titulo\" : \"Capitan America\",\n  \"estreno\" : \"2021-05-06\",\n  \"sinopsis\" : \"Un boludo con un escudo\"\n}",
+                "raw": "{\n  \"titulo\" : \"OverHaul\",\n  \"estreno\" : \"2020-05-06\",\n  \"sinopsis\" : \"Exconvicto se convierte en heroe\"\n}",
                 "form": []
             },
+            "tests": []
+        },
+        {
+            "_id": "ea20c773-eb95-46a6-a089-96d8a1261f02",
+            "colId": "bf489cce-5b96-43d3-b6e5-7c89ed661f0d",
+            "containerId": "",
+            "name": "modificar una pelicula",
+            "url": "localhost:8000/peliculas/2",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-05-14T15:12:34.709Z",
+            "modified": "2023-05-14T15:19:02.160Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"id\": 2,\n    \"titulo\": \"Titanic\",\n    \"estreno\": \"1995-05-01\",\n    \"sinopsis\": \"Barco que se hunde\"\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bdf07073-d0ab-4ed7-9980-63cec457ea56",
+            "colId": "bf489cce-5b96-43d3-b6e5-7c89ed661f0d",
+            "containerId": "",
+            "name": "Eliminar Pelicula",
+            "url": "localhost:8000/peliculas/6",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-05-14T15:24:35.831Z",
+            "modified": "2023-05-14T15:25:31.582Z",
+            "headers": [],
+            "params": [],
             "tests": []
         }
     ]
